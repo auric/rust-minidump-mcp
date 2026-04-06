@@ -1,12 +1,11 @@
 """Stackwalk tools for FastMCP."""
 
-from __future__ import annotations
-
 import json
 import sys
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Dict, Optional
+from typing import Any, Dict, Optional
 
+from minidumpmcp.config.settings import ServerSettings
 from minidumpmcp.exceptions import (
     FileValidationError,
     MinidumpAnalysisError,
@@ -17,9 +16,6 @@ from minidumpmcp.exceptions import (
 )
 
 from ._common import ToolExecutionError, run_subprocess, which
-
-if TYPE_CHECKING:
-    from minidumpmcp.config.settings import ServerSettings
 
 
 def _get_bin_path(bin_name: str) -> Path:
